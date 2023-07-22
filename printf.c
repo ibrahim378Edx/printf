@@ -97,9 +97,12 @@ int specifierS(char *str, int q)
 q = q - 2;
 while (*str != '\0')
 {
-	write(STDOUT_FILENO, str, sizeof(char));
-	str++;
-	q++;
+	if (str != NULL)
+	{
+		write(STDOUT_FILENO, str, sizeof(char));
+		str++;
+		q++;
+	}
 }
 return (q);
 }

@@ -11,7 +11,7 @@ int  _printf(const char *z, ...)
 {
 va_list args;
 int q;
-q = counter(z);
+q = 0;
 va_start(args, z);
 	while (*z != '\0')
 	{
@@ -38,14 +38,17 @@ va_start(args, z);
 
 				percent = '%';
 				write(STDOUT_FILENO, &percent, 1);
-				q = q - 2;
 				q++;
 				z++;
 			}
 
 		}
-write(STDOUT_FILENO, z, sizeof(*z));
-z++;
+			else
+			{
+				write(STDOUT_FILENO, z, sizeof(*z));
+				q++;
+				z++;
+			}
 	}
 return (q);
 }

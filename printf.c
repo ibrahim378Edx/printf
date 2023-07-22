@@ -23,12 +23,14 @@ va_start(args, z);
 				char c = (char) va_arg(args, int);
 
 				q = specifierC(c, q);
+				z++;
 			}
 			else if (*z == 's')
 			{
 				char *str = va_arg(args, char*);
 
 				q = specifierS(str, q);
+				z++;
 			}
 			else if (*z == '%')
 			{
@@ -38,6 +40,7 @@ va_start(args, z);
 				write(STDOUT_FILENO, &percent, 1);
 				q = q - 2;
 				q++;
+				z++;
 			}
 
 		}
@@ -91,15 +94,12 @@ return (q);
 */
 int specifierS(char *str, int q)
 {
-int counterr;
-counterr = 0;
 q = q - 2;
 while (*str != '\0')
 {
-	counterr++;
+	write(STDOUT_FILENO, str, sizeof(char));
 	str++;
 	q++;
 }
-write(STDOUT_FILENO, str, sizeof(char) * counterr);
 return (q);
 }

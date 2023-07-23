@@ -13,6 +13,8 @@ va_list args;
 int q;
 q = 0;
 va_start(args, z);
+if (z != NULL)
+{
 	while (*z != '\0')
 	{
 		if (*z == '%')
@@ -47,6 +49,11 @@ va_start(args, z);
 		}
 	}
 return (q);
+}
+else
+{
+return(0);	
+}
 }
 
 /**
@@ -100,7 +107,6 @@ while (*str != '\0')
 	write(STDOUT_FILENO, str, sizeof(char));
 	q++;
 	str++;
-	
 }
 return (q);
 }

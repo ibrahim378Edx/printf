@@ -11,7 +11,7 @@ int  _printf(const char *z, ...)
 {
 if(z == NULL)
 {
-return (NULL);
+return (0);
 }
 va_list args;
 int q;

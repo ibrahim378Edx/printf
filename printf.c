@@ -94,6 +94,9 @@ return (q);
 */
 int specifierS(char *str, int q)
 {
+char *w = "(null)";
+if (str != NULL)
+{
 while (*str != '\0')
 {
 	write(STDOUT_FILENO, str, sizeof(char));
@@ -101,4 +104,7 @@ while (*str != '\0')
 	q++;
 }
 return (q);
+}
+write(STDOUT_FILENO, w, sizeof(char) * 6);
+return (6);
 }

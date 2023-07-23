@@ -34,10 +34,8 @@ va_start(args, z);
 			}
 			else if (*z == '%')
 			{
-				char percent;
 
-				percent = '%';
-				write(STDOUT_FILENO, &percent, 1);
+				write(STDOUT_FILENO, z, 1);
 				q++;
 				z++;
 			}

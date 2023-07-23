@@ -104,5 +104,5 @@ while (*str != '\0')
 return (q);
 }
 write(STDOUT_FILENO, w, sizeof(char) * 6);
-return (6);
+return (q + 6);
 }

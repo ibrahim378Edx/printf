@@ -46,7 +46,6 @@ va_start(args, z);
 			z++;
 		}
 	}
-printf("%d", q);
 return (q);
 }
 
@@ -98,7 +97,6 @@ if (str != NULL)
 {
 while (*str != '\0')
 {
-	printf("%d", q);
 	write(STDOUT_FILENO, str, sizeof(char));
 	str++;
 	q++;

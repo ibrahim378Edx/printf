@@ -50,7 +50,7 @@ return (-1);
 			z++;
 		}
 	}
-va_arg(args);
+va_end(args);
 return (q);
 }
 

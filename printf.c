@@ -46,7 +46,7 @@ va_start(args, z);
 			z++;
 		}
 	}
-return (q - 1);
+return (q);
 }
 
 /**

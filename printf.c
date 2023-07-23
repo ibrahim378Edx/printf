@@ -9,6 +9,10 @@
  */
 int  _printf(const char *z, ...)
 {
+if(z == NULL)
+{
+return (NULL);
+}
 va_list args;
 int q;
 q = 0;
@@ -98,12 +102,9 @@ int specifierS(char *str, int q)
 {
 while (*str != '\0')
 {
-	if (str != NULL)
-	{
-		write(STDOUT_FILENO, str, sizeof(char));
-		str++;
-		q++;
-	}
+	write(STDOUT_FILENO, str, sizeof(char));
+	str++;
+	q++;
 }
 return (q);
 }

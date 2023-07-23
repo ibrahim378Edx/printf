@@ -48,7 +48,8 @@ va_start(args, z);
 			z++;
 		}
 	}
-return (q);
+	printf("%d", q);
+return (q - 1);
 }
 
 /**
@@ -64,7 +65,7 @@ int i;
 i = 0;
 	while (*(z + i) != '\0')
 	{
-	i++;
+		i++;
 	}
 return (i);
 }

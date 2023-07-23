@@ -98,8 +98,9 @@ if (str != NULL)
 while (*str != '\0')
 {
 	write(STDOUT_FILENO, str, sizeof(char));
-	str++;
 	q++;
+	str++;
+	
 }
 return (q);
 }

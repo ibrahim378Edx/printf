@@ -36,7 +36,7 @@ va_start(args, z);
 			{
 				write(STDOUT_FILENO, z, 1);
 				q++;
-
+				z++;
 			}
 		}
 		else

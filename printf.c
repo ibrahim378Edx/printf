@@ -22,14 +22,14 @@ va_start(args, z);
 			{
 				char c = (char) va_arg(args, int);
 
-				q = specifierC(c, q);
+				q = q + specifierC(c, q);
 				z++;
 			}
 			else if (*z == 's')
 			{
 				char *str = va_arg(args, char*);
 
-				q = specifierS(str, q);
+				q = q + specifierS(str, q);
 				z++;
 			}
 			else if (*z == '%')

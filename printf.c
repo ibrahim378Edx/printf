@@ -23,7 +23,7 @@ va_start(args, z);
 				char c = (char) va_arg(args, int);
 
 				q = specifierC(c, q);
-
+				z++;
 			}
 			else if (*z == 's')
 			{
@@ -45,6 +45,7 @@ va_start(args, z);
 			q++;
 			z++;
 		}
+		z++;
 	}
 return (q);
 }

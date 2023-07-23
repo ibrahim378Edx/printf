@@ -34,12 +34,10 @@ va_start(args, z);
 			}
 			else if (*z == '%')
 			{
-
 				write(STDOUT_FILENO, z, 1);
 				q++;
 				z++;
 			}
-
 		}
 		else
 		{

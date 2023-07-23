@@ -43,12 +43,12 @@ va_start(args, z);
 			}
 
 		}
-			else
-			{
-				write(STDOUT_FILENO, z, sizeof(*z));
-				q++;
-				z++;
-			}
+		else
+		{
+			write(STDOUT_FILENO, z, sizeof(char));
+			q++;
+			z++;
+		}
 	}
 return (q);
 }
@@ -83,7 +83,6 @@ int specifierC(char c, int q)
 {
 write(STDOUT_FILENO, &c, sizeof(char));
 q++;
-q = q - 2;
 return (q);
 }
 /**
@@ -97,7 +96,6 @@ return (q);
 */
 int specifierS(char *str, int q)
 {
-q = q - 2;
 while (*str != '\0')
 {
 	if (str != NULL)

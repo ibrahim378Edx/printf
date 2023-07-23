@@ -46,6 +46,7 @@ va_start(args, z);
 			z++;
 		}
 	}
+va_end(args);
 return (q);
 }
 

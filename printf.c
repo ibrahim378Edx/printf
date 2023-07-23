@@ -22,14 +22,14 @@ va_start(args, z);
 			{
 				char c = (char) va_arg(args, int);
 
-				q = q + specifierC(c, q);
+				q = specifierC(c, q);
 				z++;
 			}
 			else if (*z == 's')
 			{
 				char *str = va_arg(args, char*);
 
-				q = q + specifierS(str, q);
+				q = specifierS(str, q);
 				z++;
 			}
 			else if (*z == '%')
@@ -46,6 +46,7 @@ va_start(args, z);
 			z++;
 		}
 	}
+printf("%d", q);
 return (q);
 }
 
@@ -97,6 +98,7 @@ if (str != NULL)
 {
 while (*str != '\0')
 {
+	printf("%d", q);
 	write(STDOUT_FILENO, str, sizeof(char));
 	str++;
 	q++;

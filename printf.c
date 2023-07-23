@@ -11,7 +11,7 @@ int  _printf(const char *z, ...)
 {
 va_list args;
 int q;
-q = 1;
+q = 0;
 va_start(args, z);
 	while (*z != '\0')
 	{
@@ -23,20 +23,20 @@ va_start(args, z);
 				char c = (char) va_arg(args, int);
 
 				q = specifierC(c, q);
-				z++;
+
 			}
 			else if (*z == 's')
 			{
 				char *str = va_arg(args, char*);
 
 				q = specifierS(str, q);
-				z++;
+
 			}
 			else if (*z == '%')
 			{
 				write(STDOUT_FILENO, z, 1);
 				q++;
-				z++;
+
 			}
 		}
 		else

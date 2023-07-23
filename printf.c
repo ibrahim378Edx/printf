@@ -46,7 +46,6 @@ va_start(args, z);
 			z++;
 		}
 	}
-	printf("%d", q);
 return (q);
 }
 

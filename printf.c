@@ -9,13 +9,13 @@
  */
 int  _printf(const char *z, ...)
 {
-if(z == NULL)
-{
-return (0);
-}
 va_list args;
 int q;
 q = 0;
+if (z == NULL)
+{
+return (0);	
+}
 va_start(args, z);
 	while (*z != '\0')
 	{

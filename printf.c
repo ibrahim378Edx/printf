@@ -11,7 +11,7 @@ int  _printf(const char *z, ...)
 {
 va_list args;
 int q;
-q = 0;
+q = 1;
 va_start(args, z);
 	while (*z != '\0')
 	{

@@ -30,7 +30,7 @@ va_start(args, z);
 				char *str = va_arg(args, char*);
 
 				q = specifierS(str, q);
-
+				z++;
 			}
 			else if (*z == '%')
 			{

@@ -47,7 +47,6 @@ va_start(args, z);
 		}
 	}
 return (q);
-
 }
 
 /**
@@ -99,8 +98,8 @@ if (str != NULL)
 while (*str != '\0')
 {
 	write(STDOUT_FILENO, str, sizeof(char));
-	q++;
 	str++;
+	q++;
 }
 return (q);
 }

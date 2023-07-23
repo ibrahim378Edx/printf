@@ -43,9 +43,8 @@ va_start(args, z);
 		{
 			write(STDOUT_FILENO, z, sizeof(char));
 			q++;
-
+			z++;
 		}
-		z++;
 	}
 return (q);
 }

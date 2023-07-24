@@ -26,7 +26,7 @@ while (*z != '\0')
 			char c = (char) va_arg(args, int);
 
 			q = specifierC(c, q);
-			
+			z++;
 		}
 		else if (*z == 's')
 		{
@@ -81,7 +81,7 @@ int specifierS(char *str, int q)
 char *w = "(null)";
 if (str != NULL)
 {
-while (*str != '\0')
+while (str != NULL)
 {
 	write(STDOUT_FILENO, str, sizeof(char));
 	str++;

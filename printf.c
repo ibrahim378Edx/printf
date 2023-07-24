@@ -14,62 +14,41 @@ int q;
 q = 0;
 va_start(args, z);
 if (z == NULL)
+	return (-1);
+
+while (*z != '\0')
 {
-return (-1);
-}
-	while (*z != '\0')
+	if (*z == '%')
 	{
-		if (*z == '%')
+		z++;
+		if (*z == 'c')
 		{
+			char c = (char) va_arg(args, int);
+
+			q = specifierC(c, q);
 			z++;
-			if (*z == 'c')
-			{
-				char c = (char) va_arg(args, int);
-
-				q = specifierC(c, q);
-				z++;
-			}
-			else if (*z == 's')
-			{
-				char *str = va_arg(args, char*);
-
-				q = specifierS(str, q);
-				z++;
-			}
-			else if (*z == '%')
-			{
-				write(STDOUT_FILENO, z, 1);
-				q++;
-				z++;
-			}
 		}
-		else
+		else if (*z == 's')
 		{
-			write(STDOUT_FILENO, z, sizeof(char));
+			char *str = va_arg(args, char*);
+
+			q = specifierS(str, q);
+			z++;
+		}
+		else if (*z == '%')
+		{
+			write(STDOUT_FILENO, z, 1);
 			q++;
 			z++;
 		}
 	}
+	else
+		write(STDOUT_FILENO, z, sizeof(char));
+		q++;
+		z++;
+}
 va_end(args);
 return (q);
-}
-
-/**
- * counter - counter for the full string
- *
- * @z: string provided by user
- *
- * Return: the string length
- */
-int counter(const char *z)
-{
-int i;
-i = 0;
-	while (*(z + i) != '\0')
-	{
-		i++;
-	}
-return (i);
 }
 /**
  * specifierC - Specifier for %s

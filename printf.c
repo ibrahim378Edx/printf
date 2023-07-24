@@ -63,10 +63,6 @@ return (q);
 */
 int specifierC(char c, int q)
 {
-if (c == '\0')
-{
-return (q);
-}
 write(STDOUT_FILENO, &c, sizeof(char));
 q++;
 return (q);

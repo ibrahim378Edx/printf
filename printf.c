@@ -39,7 +39,7 @@ while (*z != '\0')
 		{
 			write(STDOUT_FILENO, z, 1);
 			q++;
-			
+			z++;
 		}
 	}
 	else
@@ -63,6 +63,8 @@ return (q);
 */
 int specifierC(char c, int q)
 {
+	if (c == '\0')
+		return (0);
 write(STDOUT_FILENO, &c, sizeof(char));
 q++;
 return (q);

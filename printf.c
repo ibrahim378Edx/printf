@@ -43,9 +43,11 @@ while (*z != '\0')
 		}
 	}
 	else
+	{
 		write(STDOUT_FILENO, z, sizeof(char));
 		q++;
 		z++;
+	}
 }
 va_end(args);
 return (q);

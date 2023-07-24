@@ -39,7 +39,7 @@ while (*z != '\0')
 		{
 			write(STDOUT_FILENO, z, 1);
 			q++;
-			z++;
+			
 		}
 	}
 	else

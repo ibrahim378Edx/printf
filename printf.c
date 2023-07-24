@@ -33,7 +33,7 @@ while (*z != '\0')
 			char *str = va_arg(args, char*);
 
 			q = specifierS(str, q);
-			z++;
+			
 		}
 		else if (*z == '%')
 		{

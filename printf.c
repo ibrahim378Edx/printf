@@ -16,7 +16,7 @@ va_start(args, z);
 if (z == NULL)
 	return (-1);
 
-while (*z != '\0')
+while (z != NULL)
 {
 	if (*z == '%')
 	{

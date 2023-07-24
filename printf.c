@@ -16,7 +16,7 @@ va_start(args, z);
 if (z == NULL)
 	return (-1);
 
-while (z != NULL)
+while (*z != '\0')
 {
 	if (*z == '%')
 	{
@@ -63,6 +63,10 @@ return (q);
 */
 int specifierC(char c, int q)
 {
+if (c == '\0')
+{
+return (q);
+}
 write(STDOUT_FILENO, &c, sizeof(char));
 q++;
 return (q);
@@ -89,9 +93,6 @@ while (*str != '\0')
 }
 return (q);
 }
-else
-{
 write(STDOUT_FILENO, w, sizeof(char) * 6);
 return (q + 6);
-}
 }

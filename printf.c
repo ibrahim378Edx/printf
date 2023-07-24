@@ -68,7 +68,7 @@ q++;
 return (q);
 }
 /**
- * specifierS - Specifier for %c
+ * specifierS - Specifier for %s
  *
  * @str: string to print
  *
@@ -81,7 +81,7 @@ int specifierS(char *str, int q)
 char *w = "(null)";
 if (str != NULL)
 {
-while (str != NULL)
+while (*str != '\0')
 {
 	write(STDOUT_FILENO, str, sizeof(char));
 	str++;
@@ -89,6 +89,9 @@ while (str != NULL)
 }
 return (q);
 }
+else
+{
 write(STDOUT_FILENO, w, sizeof(char) * 6);
 return (q + 6);
+}
 }

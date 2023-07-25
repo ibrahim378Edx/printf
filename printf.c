@@ -14,9 +14,8 @@ int q;
 q = 0;
 va_start(args, z);
 if (z == NULL)
-{
 	return (-1);
-}
+
 while (*z != '\0')
 {
 	if (*z == '%')

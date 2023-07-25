@@ -26,28 +26,25 @@ while (*z != '\0')
 			char c = (char) va_arg(args, int);
 
 			q = specifierC(c, q);
-			z++;
 		}
 		else if (*z == 's')
 		{
 			char *str = va_arg(args, char*);
 
 			q = specifierS(str, q);
-			z++;
 		}
 		else if (*z == '%')
 		{
 			write(STDOUT_FILENO, z, 1);
 			q++;
-			z++;
 		}
 	}
 	else
 	{
 		write(STDOUT_FILENO, z, sizeof(char));
 		q++;
-		z++;
 	}
+z++;
 }
 va_end(args);
 return (q);

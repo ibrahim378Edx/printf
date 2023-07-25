@@ -33,7 +33,7 @@ while (*z != '\0')
 
 			q = specifierS(str, q);
 		}
-		else if (*z == '%')
+		else
 		{
 			write(STDOUT_FILENO, z, 1);
 			q++;
@@ -84,7 +84,7 @@ while (*str != '\0')
 	str++;
 	q++;
 }
-return (q + 1);
+return (q);
 }
 write(STDOUT_FILENO, w, sizeof(char) * 6);
 return (q + 6);

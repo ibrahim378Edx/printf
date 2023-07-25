@@ -84,7 +84,7 @@ while (*str != '\0')
 	str++;
 	q++;
 }
-return (q);
+return (q - 1);
 }
 write(STDOUT_FILENO, w, sizeof(char) * 6);
 return (q + 6);

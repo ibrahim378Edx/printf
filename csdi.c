@@ -1,8 +1,8 @@
 #include "main.h"
 
 /**
-  * _print_a_char - Prints a char
-  * 
+  * specifierC - Prints a char
+  *
   * @args: arg to print
   *
   * Return: return 1 for the printed charater
@@ -14,8 +14,8 @@ return (1);
 }
 
 /**
-  * _print_a_string - Prints a string
-  * 
+  * specifierS - Prints a string
+  *
   * @args: args to print
   *
   * Return: length of the printed string
@@ -46,7 +46,7 @@ return (6);
 
 /**
   * specifierDI - counter and rec caller
-  * 
+  *
   * @args: args to print
   *
   * Return: lengths of the printed number
@@ -77,7 +77,7 @@ return (count);
 
 /**
   * intrec - Prints a integer
-  * 
+  *
   * @a: integer to print
   *
   * Return: Nothing

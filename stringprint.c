@@ -2,9 +2,9 @@
 
 /**
   * stringprint - prints the rest of the string
-  * 
+  *
   * @format: the actually string without directives
-  * 
+  *
   * @args: valist return
   *
   * Return: length of the printed string
@@ -49,9 +49,9 @@ while (format && format[i])
 
 /**
   * specifierchecker - specifier check
-  * 
+  *
   * @format: the returned char after %
-  * 
+  *
   * @args: valist return
   *
   * Return: printed values of the specifier
@@ -83,9 +83,9 @@ int specifierchecker(char format, va_list args)
   * badspec - checks for non supported or incorrect spec
   *
   * @prevformat: The previous specifier of actual specifier
-  * 
+  *
   * @format: The specifier to prints
-  * 
+  *
   * @count: The current count before prints invalid specifiers
   *
   * Return: count
@@ -107,8 +107,8 @@ return (count);
 
 /**
   * specheck - checks the specifier
-  * 
-  * @_type: char to check
+  *
+  * @type: char to check
   *
   * Return: if specifier found return 1
   */

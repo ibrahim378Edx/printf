@@ -1,7 +1,7 @@
 #include "main.h"
 /**
   * binarycalc - calculate the binary value
-  * 
+  *
   * @args: values to print
   *
   * Return: The number of printed digits
@@ -31,7 +31,7 @@ return (b);
 
 /**
   * binaryrec - Prints a binary
-  * 
+  *
   * @a: integer to print
   *
   * Return: nothing

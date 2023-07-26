@@ -9,9 +9,9 @@
 
 /**
   * struct specifiers - Struct to store specifiers pointers
-  * 
+  *
   * @specifier: which  specifier
-  * 
+  *
   * @f: The function pointer
   */
 

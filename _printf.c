@@ -1,91 +1,23 @@
+
 #include "main.h"
-#include <unistd.h>
+
 /**
- * _printf -  trying to replicate printf
+ * _printf - function my printf
+ * @format: string whit format to print
  *
- * @z: string provided by user
- *
- * Return: amount of chars printed
+ * Return: number of chars that print
  */
-int  _printf(const char *z, ...)
+int _printf(const char *format, ...)
 {
-va_list args;
-int q;
-q = 0;
-va_start(args, z);
-if (z == NULL)
-	return (-1);
+	va_list args;
+	int i = 0;
 
-while (*z != '\0')
+if (format == NULL)
 {
-	if (*z == '%')
-	{
-		z++;
-		if (*z == 'c')
-		{
-			char c = (char) va_arg(args, int);
-
-			q = specifierC(c, q);
-		}
-		else if (*z == 's')
-		{
-			char *str = va_arg(args, char*);
-
-			q = specifierS(str, q);
-		}
-		else
-		{
-			write(STDOUT_FILENO, z, 1);
-			q++;
-		}
-	}
-	else
-	{
-		write(STDOUT_FILENO, z, sizeof(char));
-		q++;
-	}
-z++;
+return (-1);
 }
+va_start(args, format);
+i = stringprint(format, args);
 va_end(args);
-return (q);
-}
-/**
- * specifierC - Specifier for %s
- *
- * @c: char to print
- *
- * @q: counter of chars printed
- *
- * Return: returing q again after updating
-*/
-int specifierC(char c, int q)
-{
-write(STDOUT_FILENO, &c, sizeof(char));
-q++;
-return (q);
-}
-/**
- * specifierS - Specifier for %s
- *
- * @str: string to print
- *
- * @q: counter of chars printed
- *
- * Return: returing q again after updating
-*/
-int specifierS(char *str, int q)
-{
-char *w = "(null)";
-if (str != NULL)
-{
-while (*str != '\0')
-{
-	write(STDOUT_FILENO, str, sizeof(char));
-	str++;
-	q++;
-}
-return (q);
-}
-write(STDOUT_FILENO, w, sizeof(char) * 6);
-return (q + 6);
+return (i);
 }
